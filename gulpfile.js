@@ -11,27 +11,7 @@ const rename = require("gulp-rename");
 const doiuse = require("doiuse");
 const runSequence = require("run-sequence");
 const webpack = require("webpack-stream");
-
-
-
-
-/*
-const postcss = require("gulp-postcss");
-
-const size = require("gulp-size");
-const changed = require("gulp-changed");
-
-const browsersync = require("browser-sync");
-const plumber = require("gulp-plumber");
-const sourcemaps = require("gulp-sourcemaps");
-const sass = require("gulp-sass");
-const postcss = require("gulp-postcss");
-const scss = require("postcss-scss");
-const precss = require("precss");
-const autoprefixer = require("autoprefixer");
-const gulpFilter = require("gulp-filter");
-const rename = require("gulp-rename");
-*/
+const imagemin = require("gulp-imagemin");
 
 gulp.task("webpack", function() {
 	return gulp.src("app.js")
@@ -53,7 +33,21 @@ gulp.task("css", function() {
 		.pipe(size())
 		.pipe(rename("main-prod.css"))
 		.pipe(gulp.dest("css/"));
-})
+});
+
+gulp.task("imagemin", function() {
+	gulp.src("images/**/*")
+		.pipe(imagemin({
+			optimizationLevel: 3,
+			progressive: true,
+			interlaced: false,
+			svgoPlugins: [{
+				removeViewBox: false
+			}]
+		}))
+		.pipe(gulp.dest("image-fixed"))
+});
+
 
 function errorHandler (error) {
 	console.log(error.toString());
