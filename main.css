@@ -6,8 +6,10 @@ html {
 h1 {
 	font-size: 3em;
 	line-height: 30pt;
+	color: #aaaaae;
 }
 
 p {
 	font-size: 1em;
+	color: #aaaaaf;
 }

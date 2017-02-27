@@ -24,7 +24,7 @@ gulp.task("colorguard", function() {
 		.pipe(colorguard()).on("error", errorHandler)
 		.pipe(plumber())
 		.pipe(colorguard())
-		.pipe(gulp.dest(config.destCSS));
+		.pipe(gulp.dest("main.css"));
 });
 
 gulp.task("css", function() {

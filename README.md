@@ -3,3 +3,9 @@ Automatisering är en viktig process för att spara dyrbar projekttid och säker
 
 ## Mål
 Förstå asynkrona och synkrona streams, kunna läsa och skapa tasks
+
+- [Lista över Gulp-plugins](https://github.com/Pestov/essential-gulp-plugins)
+- [Webpack](https://webpack.js.org)
+- [Gulp](http://gulpjs.com)
+- [Code Chunking with Webpack: A Pragmatic Approach](https://medium.com/react-weekly/code-chunking-with-webpack-a-pragmatic-approach-e17e8bcc6453#.4wvch0mbs)
+- [Advanced Webpack Part 2: Code Splitting](http://jonathancreamer.com/advanced-webpack-part-2-code-splitting/)
