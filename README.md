@@ -9,3 +9,4 @@ Förstå asynkrona och synkrona streams, kunna läsa och skapa tasks
 - [Gulp](http://gulpjs.com)
 - [Code Chunking with Webpack: A Pragmatic Approach](https://medium.com/react-weekly/code-chunking-with-webpack-a-pragmatic-approach-e17e8bcc6453#.4wvch0mbs)
 - [Advanced Webpack Part 2: Code Splitting](http://jonathancreamer.com/advanced-webpack-part-2-code-splitting/)
+- [A Detailed Introduction to Webpack](https://www.smashingmagazine.com/2017/02/a-detailed-introduction-to-webpack/)

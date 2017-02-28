@@ -6,6 +6,7 @@ const plumber = require("gulp-plumber");
 const colorguard = require("gulp-colorguard");
 const size = require("gulp-size");
 const cleancss = require("gulp-clean-css");
+const sass = require("gulp-sass");
 const del = require("del");
 const rename = require("gulp-rename");
 const doiuse = require("doiuse");
@@ -20,11 +21,17 @@ gulp.task("webpack", function() {
 });
 
 gulp.task("colorguard", function() {
-	gulp.src("main.css")
+	gulp.src(config.colorguard.src)
 		.pipe(colorguard()).on("error", errorHandler)
 		.pipe(plumber())
 		.pipe(colorguard())
 		.pipe(gulp.dest("main.css"));
+});
+
+gulp.task("sass", function() {
+	return gulp.src("main.scss")
+		.pipe(sass())
+		.pipe(gulp.dest(""));
 });
 
 gulp.task("css", function() {
@@ -48,6 +55,15 @@ gulp.task("imagemin", function() {
 		.pipe(gulp.dest("image-fixed"))
 });
 
+gulp.task("sequence", function(cb) {
+	runSequence(
+		"css",
+		[
+			"colorguard",
+			"imagemin"
+		],
+		cb)
+});
 
 function errorHandler (error) {
 	console.log(error.toString());
@@ -61,17 +77,7 @@ gulp.task("del", function() {
 
 gulp.task("chain", ["colorguard", "del"], function() { });
 
-gulp.task("sequence", function(cb) {
-	runSequence(
-		"sass",
-		[
-			"colorguard",
-			"louis",
-			"doiuse"
-		],
-		"del"
-		cb)
-});
+
 */
 
 
